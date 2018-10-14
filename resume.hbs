@@ -2,10 +2,42 @@
 <html>
 
 	<head>
+		{{#resume.basics}}
 		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-		<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+		<meta name="designer" content="francescoes" />
+		{{#if name}}
+		<meta name="author" content="{{name}}" />
+		<title>Résumé of {{name}}</title>
+		<meta property="og:title" content="Résumé of {{name}}" />
+		<meta name="owner" content="{{name}}">
+		{{/if}}
+		{{#if summary}}
+		<meta name="description" content="{{summary}}" />
+		{{/if}}
+		{{#if picture}}
+		<meta property="og:image" content="{{picture}}" />
+		{{/if}}
+		{{#if ogdata}}
+		{{#ogdata}}
+		<meta name="og:type" content="profile"/>
+		<meta name="og:profile:first_name" content="{{first_name}}"/>
+		<meta name="og:profile:last_name" content="{{last_name}}"/>
+		<meta name="og:profile:username" content="{{username}}"/>
+		<meta name="og:profile:gender" content="{{gender}}"/>
+		{{/ogdata}}
+		{{/if}}
+		{{#if email}}
+		<meta name="reply-to" content="{{email}}">
+		{{/if}}
+		{{/resume.basics}}
+		
+		<meta name="language" content="EN" />
+		<meta name="subject" content="Résumé" />
+		<meta name="twitter:card" value="summary" /> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<style>
 			{{{css}}}
 		</style>
